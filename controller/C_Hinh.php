@@ -7,4 +7,11 @@ class C_Hinh{
 		return array('hinh'=>$hinh);
 	}
 }
+class C_Truyen{
+	public function index(){
+		$m_truyen = new M_Truyen();
+		$truyen = $m_truyen->getManga();
+		return array('truyen'=>$truyen);
+	}
+}
 ?>
