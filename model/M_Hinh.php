@@ -7,5 +7,11 @@ class M_Hinh extends database{
 		return $this->loadAllRows();
 	}
 }
-
+class M_Truyen extends database{
+	function getManga(){
+		$sql="SELECT * FROM truyen";
+		$this->setQuery($sql);
+		return $this->loadAllRows();
+	}	
+}
 ?>
