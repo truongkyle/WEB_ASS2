@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 12, 2018 lúc 04:57 AM
+-- Thời gian đã tạo: Th12 12, 2018 lúc 08:07 AM
 -- Phiên bản máy phục vụ: 10.1.37-MariaDB
 -- Phiên bản PHP: 7.2.12
 
@@ -69,7 +69,22 @@ INSERT INTO `images` (`id`, `id_truyen`, `name`, `order_image`) VALUES
 (7, 2, 'chapter2_one-piece-001.jpg', 1),
 (8, 2, 'chapter2_one-piece-002.jpg', 2),
 (9, 2, 'chapter2_one-piece-003.jpg', 3),
-(10, 2, 'chapter2_one-piece-004.jpg', 4);
+(10, 2, 'chapter2_one-piece-004.jpg', 4),
+(11, 1, 'chapter1_naruto.png', 0),
+(14, 2, 'chapter2_naruto.png', 0),
+(15, 3, 'chapter3_naruto.png', 0),
+(16, 4, 'chapter4_naruto.png', 0),
+(17, 5, 'chapter5_naruto.png', 0),
+(18, 6, 'chapter6_naruto.png', 0),
+(19, 7, 'chapter7_naruto.png', 0),
+(20, 8, 'chapter8_naruto.png', 0),
+(21, 9, 'chapter9_naruto.png', 0),
+(22, 10, 'chapter10_naruto.png', 0),
+(23, 11, 'chapter11_naruto.png', 0),
+(24, 12, 'chapter12_naruto.png', 0),
+(25, 13, 'chapter13_naruto.png', 0),
+(26, 14, 'chapter14_naruto.png', 0),
+(27, 15, 'chapter15_naruto.png', 0);
 
 -- --------------------------------------------------------
 
@@ -113,7 +128,19 @@ CREATE TABLE `truyen` (
 INSERT INTO `truyen` (`id`, `ten_truyen`, `tac_gia`, `id_the_loai`, `chapter`, `mo_ta`) VALUES
 (1, 'One Piece', 'tác giả hay', 4, 1, 'truyện hay.'),
 (2, 'One Piece', 'tác giả', 4, 2, 'truyện xàm lông'),
-(3, 'Naruto', 'tác giả hay', 1, 1, 'truyện tình cảm');
+(3, 'One Piece', '', 4, 3, ''),
+(4, 'One Piece', '', 4, 4, ''),
+(5, 'One Piece', '', 4, 5, ''),
+(6, 'One Piece', '', 4, 6, ''),
+(7, 'One Piece', '', 4, 7, ''),
+(8, 'One Piece', '', 4, 8, ''),
+(9, 'One Piece', '', 4, 9, ''),
+(10, 'One Piece', '', 4, 10, ''),
+(11, 'One Piece', '', 4, 11, ''),
+(12, 'One Piece', '', 4, 12, ''),
+(13, 'One Piece', '', 4, 13, ''),
+(14, 'One Piece', '', 4, 14, ''),
+(15, 'One Piece', '', 4, 15, '');
 
 -- --------------------------------------------------------
 
@@ -196,7 +223,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT cho bảng `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT cho bảng `the_loai`
@@ -208,7 +235,7 @@ ALTER TABLE `the_loai`
 -- AUTO_INCREMENT cho bảng `truyen`
 --
 ALTER TABLE `truyen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
