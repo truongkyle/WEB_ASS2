@@ -3,6 +3,10 @@ include('controller/C_Hinh.php');
 $c_hinh = new C_Hinh();
 $noi_dung = $c_hinh->index();
 $hinh = $noi_dung['hinh'];
+$c_truyen = new C_Truyen();
+$cac_truyen = $c_truyen->index();
+print_r($cac_truyen);
+$truyen = $cac_truyen['truyen'];
 ?>
 
 <!DOCTYPE html>
@@ -117,92 +121,108 @@ $hinh = $noi_dung['hinh'];
         <div class="carousel slide multi-item-carousel" id="theCarousel">
           <div class="carousel-inner">
             <div class="item active">
-              <div class="col-xs-4"><a href="#1"><img alt="No image" src="css/quoctinh/Images/<?=$hinh[0]->name?>" class="img-responsive" ></a></div>
+              <?php
+              $id = 0;
+                for($i=0;$i<count($hinh);$i++){
+                  if($hinh[$i]->id_truyen==101){
+                    $id = $i;
+                  }
+                }
+            ?>
+            <?php
+              $idt = 0;
+                for($i=0;$i<count($truyen);$i++){
+                  if($truyen[$i]->id==101){
+                    $idt = $i;
+                  }
+                }
+            ?>
+              <div class="col-xs-4"><a href="#1"><img alt="No image" src="css/quoctinh/Images/<?=$hinh[$id]->name?>" class="img-responsive" ></a></div>
               <div class="col-xs-8">
                 <div class="col-xs-4">
-                  <p>Arifureta Shokugyou De Sekai Saikyou</p>
-                  <p>Tác giả : Hakumai Ryou</p>
+                  <p><?=$truyen[$idt]->ten_truyen?></p>
+                  <p>Tác giả : <?=$truyen[$idt]->tac_gia?></p>
                   <p>Lượt xem: 74,966</p>
                   <p>Tình trạng: Đang Cập Nhật</p>
                 </div>
-                <div class="col-xs-8"><p>Nội Dung Arifureta Shokugyou De Sekai Saikyou:</p>
-                  <p>Một thanh niên và lớp hắn được triệu hồi tới thế giới khác. Bình thường là một thằng phế vật, khi sang thế giới khác... cậu ta... vẫn là một thằng phế vật với Class tầm thường. Chả biết hắn sẽ cứu thế giới ra sao? Xem để biết thêm chi tiết</p>
+                <div class="col-xs-8"><p>Nội Dung:</p>
+                  <p><?=$truyen[$idt]->mo_ta?></p>
                 </div>
               </div>
             </div>
             <div class="item">
-              <div class="col-xs-4"><a href="#1"><img alt="No image" src="css/quoctinh/Images/2.jpeg" class="img-responsive" ></a></div>
+              <div class="col-xs-4"><a href="#1"><img alt="No image" src="css/quoctinh/Images/<?=$hinh[$id+1]->name?>" class="img-responsive" ></a></div>
               <div class="col-xs-8"><div class="col-xs-4">
-                <p>Arifureta Shokugyou De Sekai Saikyou</p>
-                <p>Tác giả : Hakumai Ryou</p>
+                <p><?=$truyen[$idt+1]->ten_truyen?></p>
+                <p>Tác giả : <?=$truyen[$idt+1]->tac_gia?></p>
                 <p>Lượt xem: 74,966</p>
                 <p>Tình trạng: Đang Cập Nhật</p>
               </div>
               <div class="col-xs-8"><p>Nội Dung Arifureta Shokugyou De Sekai Saikyou:</p>
-                <p>Một thanh niên và lớp hắn được triệu hồi tới thế giới khác. Bình thường là một thằng phế vật, khi sang thế giới khác... cậu ta... vẫn là một thằng phế vật với Class tầm thường. Chả biết hắn sẽ cứu thế giới ra sao? Xem để biết thêm chi tiết</p>
+                <p><?=$truyen[$idt+1]->mo_ta?></p>
               </div></div>
             </div>
             <div class="item">
-              <div class="col-xs-4"><a href="#1"><img alt="No image" src="css/quoctinh/Images/3.jpeg" class="img-responsive"></a></div>
+              <div class="col-xs-4"><a href="#1"><img alt="No image" src="css/quoctinh/Images/<?=$hinh[$id+2]->name?>" class="img-responsive"></a></div>
               <div class="col-xs-8"><div class="col-xs-4">
-                <p>Arifureta Shokugyou De Sekai Saikyou</p>
-                <p>Tác giả : Hakumai Ryou</p>
+                <p><?=$truyen[$idt+2]->ten_truyen?></p>
+                <p>Tác giả : <?=$truyen[$idt+2]->tac_gia?></p>
                 <p>Lượt xem: 74,966</p>
                 <p>Tình trạng: Đang Cập Nhật</p>
               </div>
               <div class="col-xs-8"><p>Nội Dung Arifureta Shokugyou De Sekai Saikyou:</p>
-                <p>Một thanh niên và lớp hắn được triệu hồi tới thế giới khác. Bình thường là một thằng phế vật, khi sang thế giới khác... cậu ta... vẫn là một thằng phế vật với Class tầm thường. Chả biết hắn sẽ cứu thế giới ra sao? Xem để biết thêm chi tiết</p>
+                <p><?=$truyen[$idt+2]->mo_ta?></p>
               </div></div>
             </div>
             <div class="item">
-              <div class="col-xs-4"><a href="#1"><img alt="No image" src="css/quoctinh/Images/4.jpeg" class="img-responsive" ></a></div>
+              <div class="col-xs-4"><a href="#1"><img alt="No image" src="css/quoctinh/Images/<?=$hinh[$id+3]->name?>" class="img-responsive" ></a></div>
               <div class="col-xs-8"><div class="col-xs-4">
-                <p>Arifureta Shokugyou De Sekai Saikyou</p>
-                <p>Tác giả : Hakumai Ryou</p>
+                <p><?=$truyen[$idt+3]->ten_truyen?></p>
+                <p>Tác giả : <?=$truyen[$idt+3]->tac_gia?></p>
                 <p>Lượt xem: 74,966</p>
                 <p>Tình trạng: Đang Cập Nhật</p>
               </div>
               <div class="col-xs-8"><p>Nội Dung Arifureta Shokugyou De Sekai Saikyou:</p>
-                <p>Một thanh niên và lớp hắn được triệu hồi tới thế giới khác. Bình thường là một thằng phế vật, khi sang thế giới khác... cậu ta... vẫn là một thằng phế vật với Class tầm thường. Chả biết hắn sẽ cứu thế giới ra sao? Xem để biết thêm chi tiết</p>
+                <p><?=$truyen[$idt+3]->mo_ta?></p>
               </div></div>
             </div>
             <div class="item">
-              <div class="col-xs-4"><a href="#1"><img alt="No image" src="css/quoctinh/Images/5.jpeg" class="img-responsive" ></a></div>
+              <div class="col-xs-4"><a href="#1"><img alt="No image" src="css/quoctinh/Images/<?=$hinh[$id+4]->name?>" class="img-responsive" ></a></div>
               <div class="col-xs-8"><div class="col-xs-4">
-                <p>Arifureta Shokugyou De Sekai Saikyou</p>
-                <p>Tác giả : Hakumai Ryou</p>
+                <p><?=$truyen[$idt+4]->ten_truyen?></p>
+                <p>Tác giả : <?=$truyen[$idt+4]->tac_gia?></p>
                 <p>Lượt xem: 74,966</p>
                 <p>Tình trạng: Đang Cập Nhật</p>
               </div>
               <div class="col-xs-8"><p>Nội Dung Arifureta Shokugyou De Sekai Saikyou:</p>
-                <p>Một thanh niên và lớp hắn được triệu hồi tới thế giới khác. Bình thường là một thằng phế vật, khi sang thế giới khác... cậu ta... vẫn là một thằng phế vật với Class tầm thường. Chả biết hắn sẽ cứu thế giới ra sao? Xem để biết thêm chi tiết</p>
+                <p><?=$truyen[$idt+4]->mo_ta?></p>
               </div></div>
             </div>
             <div class="item">
-              <div class="col-xs-4"><a href="#1"><img alt="No image" src="css/quoctinh/Images/6.jpeg" class="img-responsive" ></a></div>
+              <div class="col-xs-4"><a href="#1"><img alt="No image" src="css/quoctinh/Images/<?=$hinh[$id+5]->name?>" class="img-responsive" ></a></div>
               <div class="col-xs-8"><div class="col-xs-4">
-                <p>Arifureta Shokugyou De Sekai Saikyou</p>
-                <p>Tác giả : Hakumai Ryou</p>
+                <p><?=$truyen[$idt+5]->ten_truyen?></p>
+                <p>Tác giả : <?=$truyen[$idt+5]->tac_gia?></p>
                 <p>Lượt xem: 74,966</p>
                 <p>Tình trạng: Đang Cập Nhật</p>
               </div>
               <div class="col-xs-8"><p>Nội Dung Arifureta Shokugyou De Sekai Saikyou:</p>
-                <p>Một thanh niên và lớp hắn được triệu hồi tới thế giới khác. Bình thường là một thằng phế vật, khi sang thế giới khác... cậu ta... vẫn là một thằng phế vật với Class tầm thường. Chả biết hắn sẽ cứu thế giới ra sao? Xem để biết thêm chi tiết</p>
+                <p><?=$truyen[$idt+5]->mo_ta?></p>
               </div></div>
             </div>
             <!-- add  more items here -->
             <!-- Example item start:  -->
 
             <div class="item">
-              <div class="col-xs-4"><a href="#1"><img alt="No image" src="css/quoctinh/Images/7.jpeg" class="img-responsive" ></a></div>
+              <div class="col-xs-4"><a href="#1"><img alt="No image" src="css/quoctinh/Images/<?=$hinh[$id+6]->name?>" class="img-responsive" ></a></div>
               <div class="col-xs-8"><div class="col-xs-4">
-                <p>Arifureta Shokugyou De Sekai Saikyou</p>
-                <p>Tác giả : Hakumai Ryou</p>
+                <p><?=$truyen[$idt+6]->ten_truyen?></p>
+                <p>Tác giả : <?=$truyen[$idt+6]->tac_gia?></p>
                 <p>Lượt xem: 74,966</p>
                 <p>Tình trạng: Đang Cập Nhật</p>
               </div>
               <div class="col-xs-8"><p>Nội Dung Arifureta Shokugyou De Sekai Saikyou:</p>
-                <p>Một thanh niên và lớp hắn được triệu hồi tới thế giới khác. Bình thường là một thằng phế vật, khi sang thế giới khác... cậu ta... vẫn là một thằng phế vật với Class tầm thường. Chả biết hắn sẽ cứu thế giới ra sao? Xem để biết thêm chi tiết</p>
+                <p><?=$truyen[$idt+6]->mo_ta?></p>
               </div></div>
             </div>
 
@@ -234,7 +254,7 @@ $hinh = $noi_dung['hinh'];
             <img alt="100%x180" data-src="holder.js/100%x180" src="css/quoctinh/Images/<?=$hinh[$id+3]->name?>" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
 
         </a> </div> </div>
-    <div class="bs-example" data-example-id="thumbnails-with-custom-content"> <div class="row"> <div class="col-sm-6 col-md-4"> <div class="thumbnail"> <a href="#" class="thumbnail"><img alt="100%x200" data-src="holder.js/100%x200" src="css/quoctinh/Images/<?=$hinh[$id+4]->name?>" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> </a><div class="caption"> <h3>Arifureta Shokugyou De Sekai Saikyou</h3> <p>Một thanh niên và lớp hắn được triệu hồi tới thế giới khác. Bình thường là một thằng phế vật, khi sang thế giới khác... cậu ta... vẫn là một thằng phế vật với Class tầm thường. Chả biết hắn sẽ cứu thế giới ra sao? Xem để biết thêm chi tiết</p> <p><a href="#" class="btn btn-primary" role="button">Readmore</a> </p> </div> </div> </div> <div class="col-sm-6 col-md-4"> <div class="thumbnail"> <a href="#" class="thumbnail"><img alt="100%x200" data-src="holder.js/100%x200" src="css/quoctinh/Images/<?=$hinh[$id+5]->name?>" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> </a><div class="caption"> <h3>Arifureta Shokugyou De Sekai Saikyou</h3> <p>Một thanh niên và lớp hắn được triệu hồi tới thế giới khác. Bình thường là một thằng phế vật, khi sang thế giới khác... cậu ta... vẫn là một thằng phế vật với Class tầm thường. Chả biết hắn sẽ cứu thế giới ra sao? Xem để biết thêm chi tiết</p> <p><a href="#" class="btn btn-primary" role="button">Readmore</a></p> </div> </div> </div> <div class="col-sm-6 col-md-4"> <div class="thumbnail"> <a href="#" class="thumbnail"><img alt="100%x200" data-src="holder.js/100%x200" src="css/quoctinh/Images/<?=$hinh[$id+6]->name?>" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"></a> <div class="caption"> <h3>Arifureta Shokugyou De Sekai Saikyou</h3> <p>Một thanh niên và lớp hắn được triệu hồi tới thế giới khác. Bình thường là một thằng phế vật, khi sang thế giới khác... cậu ta... vẫn là một thằng phế vật với Class tầm thường. Chả biết hắn sẽ cứu thế giới ra sao? Xem để biết thêm chi tiết</p> <p><a href="#" class="btn btn-primary" role="button">Readmore</a> </p> </div> </div> </div> </div> </div>
+    <div class="bs-example" data-example-id="thumbnails-with-custom-content"> <div class="row"> <div class="col-sm-6 col-md-4"> <div class="thumbnail"> <a href="#" class="thumbnail"><img alt="100%x200" data-src="holder.js/100%x200" src="css/quoctinh/Images/<?=$hinh[$id+4]->name?>" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> </a><div class="caption"> <h3><?=$truyen[$idt+1]->ten_truyen?></h3> <p><?=$truyen[$idt+1]->mo_ta?></p> <p><a href="#" class="btn btn-primary" role="button">Readmore</a> </p> </div> </div> </div> <div class="col-sm-6 col-md-4"> <div class="thumbnail"> <a href="#" class="thumbnail"><img alt="100%x200" data-src="holder.js/100%x200" src="css/quoctinh/Images/<?=$hinh[$id+5]->name?>" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> </a><div class="caption"> <h3><?=$truyen[$idt+2]->ten_truyen?></h3> <p><?=$truyen[$idt+2]->mo_ta?></p> <p><a href="#" class="btn btn-primary" role="button">Readmore</a></p> </div> </div> </div> <div class="col-sm-6 col-md-4"> <div class="thumbnail"> <a href="#" class="thumbnail"><img alt="100%x200" data-src="holder.js/100%x200" src="css/quoctinh/Images/<?=$hinh[$id+6]->name?>" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"></a> <div class="caption"> <h3><?=$truyen[$idt+3]->ten_truyen?></h3> <p><?=$truyen[$idt+3]->mo_ta?></p> <p><a href="#" class="btn btn-primary" role="button">Readmore</a> </p> </div> </div> </div> </div> </div>
 
 
 
