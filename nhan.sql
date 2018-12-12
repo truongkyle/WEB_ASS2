@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 11, 2018 lúc 11:33 AM
--- Phiên bản máy phục vụ: 10.1.31-MariaDB
--- Phiên bản PHP: 7.2.3
+-- Thời gian đã tạo: Th12 12, 2018 lúc 06:21 AM
+-- Phiên bản máy phục vụ: 10.1.36-MariaDB
+-- Phiên bản PHP: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -60,8 +60,16 @@ CREATE TABLE `images` (
 --
 
 INSERT INTO `images` (`id`, `id_truyen`, `name`, `order_image`) VALUES
-(1, 1, 'h22222.jpg', 1),
-(2, 2, 'h3333.png', 1);
+(1, 101, '3club.jpeg', 1),
+(2, 102, '3d.jpeg', 1),
+(3, 103, '17year.jpeg', 1),
+(4, 104, '16abc.jpeg', 1),
+(5, 105, 'abb.jpeg', 1),
+(6, 106, 'someone.jpeg', 1),
+(7, 107, 'mei.jpeg', 1),
+(8, 108, 'cover1.jpg', 1),
+(9, 109, 'cover2.jpg', 1),
+(10, 110, 'cover3.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -188,7 +196,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT cho bảng `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `the_loai`
